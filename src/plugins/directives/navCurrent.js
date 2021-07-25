@@ -7,6 +7,7 @@ export default {
             curIdx = _ops.curIdx,
             oNavItems = el.getElementsByClassName(className);
         oNavItems[curIdx].className += ` ${activeClass}`;
+        oNavItems[curIdx].style.border = '1px solid grey'
     },
 
 
@@ -18,5 +19,7 @@ export default {
             oNavItems = el.getElementsByClassName(className);
         oNavItems[_oOps.curIdx].className += `${className}`;
         oNavItems[_ops.curIdx].className += ` ${activeClass}`;
+        oNavItems[_oOps.curIdx].style.border = 'unset'
+        oNavItems[_ops.curIdx].style.border = '1px solid grey'
     }
 }
