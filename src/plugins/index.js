@@ -1,9 +1,9 @@
 import navCurrent from './directives/navCurrent';
 
-let newPlugin = {};
+let Plugins = {};
 
-newPlugin.install = function (Vue) {
+Plugins.install = function (Vue) {
     Vue.directive('navCurrent', navCurrent)
 }
 
-export default newPlugin;
+export default Plugins;
