@@ -1,10 +1,13 @@
 <template>
   <div>
-    <router-view></router-view>
+    <button>按钮</button>
   </div>
 </template>
+
 <script>
 export default {
-  components: {},
+  name: "MyButton",
 };
 </script>
+
+<style></style>

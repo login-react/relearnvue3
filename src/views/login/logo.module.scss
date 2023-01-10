@@ -1,0 +1,14 @@
+.loginHeader {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  :global {
+    .el-image {
+      width: 80px !important;
+    }
+  }
+  .testa {
+    color: red !important;
+  }
+}
