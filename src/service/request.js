@@ -3,7 +3,7 @@ import { getToken } from "@/utils/auth";
 
 // create an axios instance
 const service = axios.create({
-  baseURL: '', // url = base url + request url
+  baseURL: "/api", // url = base url + request url
   // withCredentials: true, // send cookies when cross-domain requests
   timeout: 300000, // request timeout
 });
@@ -12,9 +12,9 @@ const service = axios.create({
 service.interceptors.request.use(
   (config) => {
     // do something before request is sent
-    const token = getToken();
-    if (token) {
-      config.headers["Authorization"] = token;
+    const result = getToken("USER_INFO");
+    if (result) {
+      config.headers["Authorization"] = result.token;
     }
     return config;
   },
@@ -26,14 +26,13 @@ service.interceptors.request.use(
 // response interceptor
 service.interceptors.response.use(
   (response) => {
-    if (response?.data.code === 200) {
-      return Promise.resolve(response?.data)
+    if (response.status === 200) {
+      return Promise.resolve(response?.data);
     }
-    return Promise.reject(response?.data)
-
+    return Promise.reject(response?.data);
   },
   (error) => {
-    console.log('error :>> ', error);
+    console.log("error :>> ", error);
   }
 );
 
