@@ -1,6 +1,5 @@
 import axios from "axios";
 import { getToken } from "@/utils/auth";
-
 // create an axios instance
 const service = axios.create({
   baseURL: "/api", // url = base url + request url
