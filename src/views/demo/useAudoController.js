@@ -67,6 +67,11 @@ export const setOfffset = () => {
     getComputedDom().liHeight / 2 -
     getComputedDom().containerHeight / 2;
   const h1 = getComputedDom().liHeight * index + getComputedDom().liHeight / 2;
+  // 去除
+  const li = doms().ul.querySelector(".active");
+  if (li) {
+    li.classList.remove("active");
+  }
   doms().ul.style.transform = `translateY(-${offset}px)`;
   doms().ul.children[index].classList.add("active");
 };

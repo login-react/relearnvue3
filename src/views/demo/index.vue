@@ -1,6 +1,5 @@
 <template>
   <div class="box">
-    <button @click="handleAudo">测试</button>
     <div>
       <audio
         ref="audoRef"
@@ -9,23 +8,31 @@
       ></audio>
     </div>
     <div class="audoContainer">
-      <ul class="lrc-list">
-      </ul>
+      <ul class="lrc-list"></ul>
     </div>
   </div>
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, onUnmounted } from "vue";
 import {
   findTargetIndex,
   useCreateLrcElement,
   useParseLrc,
-  setOfffset
+  setOfffset,
 } from "./useAudoController";
 onMounted(() => {
   useParseLrc();
   useCreateLrcElement();
+  document.querySelector("audio").addEventListener("timeupdate", () => {
+    setOfffset();
+  });
+});
+
+onUnmounted(() => {
+  document.querySelector("audio").removeEventListener("timeupdate", () => {
+    setOfffset();
+  });
 });
 
 const handleAudo = () => {
@@ -33,7 +40,7 @@ const handleAudo = () => {
 };
 </script>
 
-<style  lang="scss">
+<style lang="scss">
 .box {
   display: flex;
   justify-content: center;
@@ -70,15 +77,10 @@ li {
   list-style: none;
   margin: 0px;
   padding: 0px;
-   
 }
 
 .audoContainer li.active {
   color: #ffffff !important;
-  transform: scale(1.2);
-}
-.active {
-   color: #ffffff;
   transform: scale(1.2);
 }
 </style>
