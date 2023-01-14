@@ -1,6 +1,6 @@
 import request from "../service/request";
 export function login(data) {
-  console.log('data :>> ', data);
+  console.log("data :>> ", data);
   return request({
     url: `/users/login`,
     method: "post",
@@ -8,9 +8,10 @@ export function login(data) {
   });
 }
 
-export function getUser() {
+export function getUser(data = "/Users/edy/Desktop/node文件夹/abc/test2.pptx") {
   return request({
-    url: `/users/getUser`,
-    method: "get",
+    url: `/fs/isFile`,
+    method: "post",
+    data,
   });
 }

@@ -1,14 +1,14 @@
 <template>
-  <!-- <div>
-    <router-view></router-view>
-  </div> -->
   <div>
+    <router-view></router-view>
+  </div>
+  <!-- <div>
     <el-button @click="handleTest" type="primary">获取token</el-button>
     <el-button @click="handleGetUser" type="primary">获取用户</el-button>
     <el-button type="primary" @click="handlTestDefValue">测试def值</el-button>
   </div>
   <Demo ref="treeRef" :title="testData.title" @gateway="handleGateway" />
-  <Provide />
+  <Provide /> -->
 </template>
 <script setup>
 import { reactive, ref, watchEffect, provide } from "vue";
@@ -40,10 +40,9 @@ const handleTest = async () => {
   });
   setToken("USER_INFO", JSON.stringify(response.data));
 };
-// const handleGetUser = () => {
-//   getUser({
-//     userName: "admin",
-//     passWord: "123456",
-//   });
-// };
+const handleGetUser = () => {
+  getUser({
+    fileName: "/Users/edy/Desktop/node文件夹/abc/testdd2.pptx",
+  });
+};
 </script>
