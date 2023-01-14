@@ -24,6 +24,7 @@
           <el-menu-item index="/layout/report">首页</el-menu-item>
           <el-menu-item index="/layout/user">用户管理</el-menu-item>
           <el-menu-item index="/layout/role">角色管理</el-menu-item>
+          <el-menu-item index="/layout/demo">示例demo</el-menu-item>
         </el-menu-item-group>
       </el-sub-menu>
       <el-sub-menu :index="2">

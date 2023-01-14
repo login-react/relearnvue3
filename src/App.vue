@@ -31,7 +31,7 @@ const handleGateway = ({ data }) => {
 };
 
 watchEffect(() => {
-  console.log("------->>>测试", import.meta.env);
+  // console.log("------->>>测试", import.meta.env);
 });
 const handleTest = async () => {
   const response = await login({

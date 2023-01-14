@@ -4,6 +4,7 @@ const User = () => import("@/views/user/index.vue");
 const Role = () => import("@/views/role/index.vue");
 const Login = () => import("@/views/login/login.jsx");
 const Report = () => import("@/views/firstPage/index.vue");
+const Demo = () => import("@/views/demo/index.vue");
 const routes = [
   { path: "/", redirect: "/layout/report" },
   {
@@ -39,6 +40,14 @@ const routes = [
           title: "角色",
         },
         component: Role,
+      },
+      {
+        path: "/layout/demo",
+        name: "demo",
+        meta: {
+          title: "示例",
+        },
+        component: Demo,
       },
     ],
   },
