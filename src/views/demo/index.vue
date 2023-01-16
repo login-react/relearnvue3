@@ -23,6 +23,7 @@ import {
 } from "./useAudoController";
 onMounted(() => {
   useParseLrc();
+  // createLrc元素 
   useCreateLrcElement();
   document.querySelector("audio").addEventListener("timeupdate", () => {
     setOfffset();
